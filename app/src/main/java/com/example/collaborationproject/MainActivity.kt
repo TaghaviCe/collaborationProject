@@ -142,7 +142,7 @@ class MainActivity : AppCompatActivity() {
     private fun setNumberButton() {
         var trueAnswer = numberA % numberB
         var falseAnswer1 = trueAnswer + 1
-        var falseAnswer2 = trueAnswer - 1
+        var falseAnswer2 = trueAnswer + 3
         var falseAnswer3 = trueAnswer + 2
         if (counterLevel == 1) {
             binding.button1.setText(trueAnswer.toString())
