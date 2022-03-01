@@ -8,6 +8,7 @@ import com.example.collaborationproject.databinding.ActivityResultBinding
 
 class resultActivity : AppCompatActivity() {
     lateinit var binding: ActivityResultBinding
+    var exit=false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
@@ -21,8 +22,10 @@ class resultActivity : AppCompatActivity() {
             back()
         }
         binding.buttonExit.setOnClickListener {
-            finish();
+            moveTaskToBack(true);
+            android.os.Process.killProcess(android.os.Process.myPid());
             System.exit(1);
+
         }
 
 
@@ -33,5 +36,6 @@ class resultActivity : AppCompatActivity() {
         setResult(RESULT_OK,result)
         finish()
     }
+
 
 }

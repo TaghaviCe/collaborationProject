@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
         initViews()
 
-
     }
 
     private fun initViews() {
