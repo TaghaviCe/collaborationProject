@@ -4,18 +4,13 @@ import android.R.color
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
-import android.graphics.BlendMode
-import android.graphics.BlendModeColorFilter
-import android.graphics.PorterDuff
 import android.os.Build
 import android.os.Bundle
 import android.widget.Button
-import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import com.example.collaborationproject.databinding.ActivityMainBinding
 import java.util.*
 
@@ -35,6 +30,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
         initViews()
 
+    }
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putString("textViewScore" , binding.textViewScore.text.toString())
+        outState.putString("textViewA" , binding.textViewA.text.toString())
+        outState.putString("textViewB" , binding.textViewB.text.toString())
+        outState.putInt("lEVEL" , counterLevel)
+        super.onSaveInstanceState(outState)
     }
 
     private fun initViews() {
@@ -150,20 +152,20 @@ class MainActivity : AppCompatActivity() {
             binding.button4.setText(falseAnswer3.toString())
 
         } else if (counterLevel == 2) {
-            binding.button1.setText(trueAnswer.toString())
-            binding.button2.setText(falseAnswer1.toString())
+            binding.button1.setText(falseAnswer1.toString())
+            binding.button2.setText(trueAnswer.toString())
             binding.button3.setText(falseAnswer2.toString())
             binding.button4.setText(falseAnswer3.toString())
         } else if (counterLevel == 3) {
-            binding.button1.setText(trueAnswer.toString())
+            binding.button1.setText(falseAnswer2.toString())
             binding.button2.setText(falseAnswer1.toString())
-            binding.button3.setText(falseAnswer2.toString())
+            binding.button3.setText(trueAnswer.toString())
             binding.button4.setText(falseAnswer3.toString())
         } else if (counterLevel == 4) {
-            binding.button1.setText(trueAnswer.toString())
+            binding.button1.setText(falseAnswer3.toString())
             binding.button2.setText(falseAnswer1.toString())
             binding.button3.setText(falseAnswer2.toString())
-            binding.button4.setText(falseAnswer3.toString())
+            binding.button4.setText(trueAnswer.toString())
         } else if (counterLevel == 5) {
             binding.button1.setText(trueAnswer.toString())
             binding.button2.setText(falseAnswer1.toString())

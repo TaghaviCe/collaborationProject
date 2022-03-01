@@ -12,7 +12,6 @@ class resultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
-        setContentView(R.layout.activity_main)
         binding = ActivityResultBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
@@ -27,8 +26,6 @@ class resultActivity : AppCompatActivity() {
             System.exit(1);
 
         }
-
-
     }
 
     private fun back() {
@@ -36,6 +33,5 @@ class resultActivity : AppCompatActivity() {
         setResult(RESULT_OK,result)
         finish()
     }
-
 
 }
