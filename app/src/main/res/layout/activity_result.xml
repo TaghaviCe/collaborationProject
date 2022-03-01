@@ -38,9 +38,9 @@
         android:layout_marginStart="157dp"
         android:layout_marginTop="138dp"
         android:layout_marginEnd="160dp"
-        android:layout_marginBottom="389dp"
+        android:layout_marginBottom="40dp"
         android:text="Exit"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonReset"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewScore" />
@@ -58,4 +58,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonExit" />
+
+    <TextView
+        android:id="@+id/textViewRecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="179dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="174dp"
+        android:layout_marginBottom="46dp"
+        android:text="Record"
+        app:layout_constraintBottom_toTopOf="@+id/buttonExit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewScore" />
 </androidx.constraintlayout.widget.ConstraintLayout>

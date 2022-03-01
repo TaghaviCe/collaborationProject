@@ -17,13 +17,15 @@
             android:id="@+id/textViewA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="TextView"
+            android:layout_margin="12dp"/>
 
         <TextView
             android:id="@+id/textViewB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="TextView"
+            android:layout_margin="12dp"/>
 
     </LinearLayout>
 

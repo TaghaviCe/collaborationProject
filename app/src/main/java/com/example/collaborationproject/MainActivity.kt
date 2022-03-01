@@ -24,10 +24,33 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+        if(savedInstanceState!= null){
+            var myText = savedInstanceState.getString("textViewScore")
+            var myText1 = savedInstanceState.getString("textViewA")
+            var myText2 = savedInstanceState.getString("textViewB")
+            var myText3 = savedInstanceState.getInt("level")
+            var myText4=savedInstanceState.getString("textButton1")
+            var myText5=savedInstanceState.getString("textButton2")
+            var myText6=savedInstanceState.getString("textButton3")
+            var myText7=savedInstanceState.getString("textButton4")
+            var myText8=savedInstanceState.getString("textButtonCube")
+
+
+            binding.textViewScore.text = myText
+            binding.textViewA.text=myText1
+            binding.textViewB.text=myText2
+            counterLevel=myText3
+            binding.button1.setText(myText4.toString())
+            binding.button2.setText(myText5.toString())
+            binding.button3.setText(myText6.toString())
+            binding.button4.setText(myText7.toString())
+            binding.buttonCube.setText(myText8.toString())
+
+        }
         initViews()
 
     }
@@ -35,7 +58,12 @@ class MainActivity : AppCompatActivity() {
         outState.putString("textViewScore" , binding.textViewScore.text.toString())
         outState.putString("textViewA" , binding.textViewA.text.toString())
         outState.putString("textViewB" , binding.textViewB.text.toString())
-        outState.putInt("lEVEL" , counterLevel)
+        outState.putInt("level" , counterLevel)
+        outState.putString("textButton1",binding.button1.text.toString())
+        outState.putString("textButton2",binding.button2.text.toString())
+        outState.putString("textButton3",binding.button3.text.toString())
+        outState.putString("textButton4",binding.button4.text.toString())
+        outState.putString("textButtonCube",binding.buttonCube.text.toString())
         super.onSaveInstanceState(outState)
     }
 
